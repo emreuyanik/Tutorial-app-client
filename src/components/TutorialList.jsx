@@ -32,6 +32,9 @@ const TutorialList = ({ tutorials, getTutorials }) => {
       console.log(error);
     }
     getTutorials();
+
+    console.log(`${process.env.REACT_APP_URL}${id}/`);
+
   };
 
   console.log(editData);
