@@ -27,14 +27,13 @@ const TutorialList = ({ tutorials, getTutorials }) => {
 
   const deleteTutorial = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_URL}${id}/`);
+      const url = `${process.env.REACT_APP_URL}${id}/`; // URL'yi oluştur
+      console.log('Silme İsteği URL:', url); // Oluşturulan URL'yi konsola yazdır
+      await axios.delete(url); // Öğreticiyi sil
     } catch (error) {
       console.log(error);
     }
     getTutorials();
-
-    console.log(`${process.env.REACT_APP_URL}${id}/`);
-
   };
 
   console.log(editData);
